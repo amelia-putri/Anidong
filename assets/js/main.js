@@ -1,39 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("list");
-
-  if (!container) {
-    console.error("Element #list tidak ditemukan");
-    return;
-  }
+  const list = document.getElementById("list");
 
   fetch("data/anime.json")
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
+      console.log("DATA ADA:", data.length);
+
       let html = "";
 
       data.forEach(item => {
         html += `
-          <div class="bg-neutral-800 rounded-lg overflow-hidden shadow">
+          <div class="bg-white text-black rounded-xl overflow-hidden shadow-lg border">
             <img
               src="${item.cover}"
               alt="${item.title}"
-              class="w-full h-40 object-cover"
+              class="w-full h-48 object-cover"
             />
-            <div class="p-3">
-              <h3 class="font-semibold text-sm">${item.title}</h3>
-              <p class="text-xs text-neutral-400 mt-1">
-                Episode: ${item.episodes.length}
+            <div class="p-4">
+              <h3 class="font-bold text-sm">${item.title}</h3>
+              <p class="text-xs text-gray-600 mt-1">
+                ${item.episodes.length} Episode
               </p>
             </div>
           </div>
         `;
       });
 
-      container.innerHTML = html;
+      list.innerHTML = html;
     })
-    .catch(error => {
-      console.error("Gagal load data:", error);
-      container.innerHTML =
-        "<p class='text-red-500'>Gagal memuat data</p>";
+    .catch(err => {
+      list.innerHTML = "<p class='text-red-500'>Gagal load data</p>";
+      console.error(err);
     });
 });

@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Anichin Clone</title>
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-zinc-900 text-white">
-<header class="p-4 text-center text-2xl font-bold">
-  Anichin Clone
-</header>
-
-<div id="list" class="grid grid-cols-2 md:grid-cols-5 gap-4 p-4"></div>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+fetch('data/anime.json')
+.then(res => res.json())
+.then(data => {
+  let html = '';
+  data.forEach(a => {
+    html += `
+      <a href="anime.html?id=${a.id}">
+        <div class="hover:scale-105 transition">
+          <img src="${a.cover}" class="rounded">
+          <h3 class="mt-2 text-center">${a.title}</h3>
+        </div>
+      </a>
+    `;
+  });
+  document.getElementById('list').innerHTML = html;
+});

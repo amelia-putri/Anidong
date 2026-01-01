@@ -24,10 +24,37 @@
 
 <script>
 const params = new URLSearchParams(window.location.search);
-document.getElementById("title").innerText = params.get("title");
-document.getElementById("episode").innerText = "Episode " + params.get("ep");
-document.getElementById("player").src = params.get("url");
+const title = params.get("title");
+const currentEp = parseInt(params.get("ep"));
+const videoUrl = params.get("url");
+
+document.getElementById("title").innerText = title;
+document.getElementById("episode").innerText = "Episode " + currentEp;
+
+const player = document.getElementById("player");
+player.src = videoUrl;
+
+// ambil data anime
+fetch("data/anime.json")
+  .then(res => res.json())
+  .then(data => {
+    const anime = data.find(a => a.title === title);
+    if (!anime) return;
+
+    const episodes = [...anime.episodes].sort((a, b) => a.episode - b.episode);
+    const index = episodes.findIndex(ep => ep.episode === currentEp);
+    const nextEp = episodes[index + 1];
+
+    if (!nextEp) return; // episode terakhir
+
+    // AUTO NEXT EPISODE
+    player.addEventListener("ended", () => {
+      window.location.href =
+        `watch.html?title=${encodeURIComponent(title)}&ep=${nextEp.episode}&url=${encodeURIComponent(nextEp.url)}`;
+    });
+  });
 </script>
+
 
 </body>
 </html>

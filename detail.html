@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <title>AniDong</title>
+  <meta charset="UTF-8">
+  <title>Detail Anime</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white p-4">
 
-<h1 class="text-center text-3xl font-bold my-6">AniDong</h1>
+<a href="index.html" class="text-purple-400">← Kembali</a>
 
-<div id="anime-list" class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 p-4"></div>
+<div id="detail" class="max-w-3xl mx-auto mt-4"></div>
 
-<script src="./assets/js/main.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch("./data/anime.json")
+  .then(res => res.json())
+  .then(data => {
+    const anime = data.find(a => a.id === id);
+    if (!anime) return;
+
+    const episodes = [...anime.episodes].sort((a,b)=>b.episode-a.episode);
+
+    document.getElementById("detail").innerHTML = `
+      <img src="${anime.cover}" class="rounded mb-4">
+      <h1 class="text-2xl font-bold mb-2">${anime.title}</h1>
+
+      <div class="space-y-2">
+        ${episodes.map(ep => `
+          <a href="watch.html?title=${encodeURIComponent(anime.title)}&ep=${ep.episode}&url=${encodeURIComponent(ep.url)}"
+             class="block bg-neutral-800 p-3 rounded hover:bg-neutral-700">
+            Episode ${ep.episode}
+          </a>
+        `).join("")}
+      </div>
+    `;
+  });
+</script>
+
 </body>
 </html>

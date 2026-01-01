@@ -1,4 +1,4 @@
-const container = document.getElementById("anime-list");
+const container = document.getElementById("list");
 let html = "";
 
 fetch("./data/anime.json")

@@ -4,11 +4,11 @@
     "title": "Battle Through the Heavens",
     "cover": "https://cdn-www.bluestacks.com/bs-images/Wallpaper_com.dpcq_.juefeng.nowgg-2.jpg",
     "episodes": [
-      { "episode": 4, "url": "https://anichin.stream/?id=v712kfq" },
-      { "episode": 4, "url": "https://anichin.stream/?id=v712kfq" },
-      { "episode": 3, "url": "https://anichin.stream/?id=v712kfq" },
+      { "episode": 1, "url": "https://anichin.stream/?id=v712kfq" },
       { "episode": 2, "url": "https://anichin.stream/?id=v712kfq" },
-      { "episode": 1, "url": "https://anichin.stream/?id=v71c2em" }
+      { "episode": 3, "url": "https://anichin.stream/?id=v712kfq" },
+      { "episode": 4, "url": "https://anichin.stream/?id=v712kfq" },
+      { "episode": 5, "url": "https://anichin.stream/?id=v71c2em" }
     ]
   },
   {
@@ -16,10 +16,10 @@
     "title": "Sword of Coming Season 2",
     "cover": "https://anichin.cafe/wp-content/uploads/2025/12/Sword-of-Coming-Season-2.webp",
     "episodes": [
-      { "episode": 4, "url": "https://anichin.stream/?id=v71jf0e" },
-      { "episode": 3, "url": "https://anichin.stream/?id=v71aj08" },
+      { "episode": 1, "url": "https://anichin.stream/?id=v719gvw" },
       { "episode": 2, "url": "https://anichin.stream/?id=v719j6a" },
-      { "episode": 1, "url": "https://anichin.stream/?id=v719gvw" }
+      { "episode": 3, "url": "https://anichin.stream/?id=v71aj08" },
+      { "episode": 4, "url": "https://anichin.stream/?id=v71jf0e" }
     ]
   },
   {
@@ -27,13 +27,13 @@
     "title": "One Piece",
     "cover": "https://cineverse.id/wp-content/uploads/2023/08/timeskip-one-piece-awal-mula-new-world.jpg",
     "episodes": [
-      { "episode": 8, "url": "https://anichin.stream/?id=v712kfq" },
-      { "episode": 7, "url": "https://anichin.stream/?id=v712kfq" }
-      { "episode": 6, "url": "https://anichin.stream/?id=v712kfq" }
-      { "episode": 4, "url": "https://anichin.stream/?id=v712kfq" }
-      { "episode": 3, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 1, "url": "https://anichin.stream/?id=v712kfq" },
       { "episode": 2, "url": "https://anichin.stream/?id=v712kfq" }
-      { "episode": 1, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 3, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 4, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 5, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 6, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 7, "url": "https://anichin.stream/?id=v712kfq" }
     ]
   }  
 ]

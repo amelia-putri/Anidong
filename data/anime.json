@@ -4,8 +4,8 @@
     "title": "Battle Through the Heavens",
     "cover": "https://cdn-www.bluestacks.com/bs-images/Wallpaper_com.dpcq_.juefeng.nowgg-2.jpg",
     "episodes": [
-      { "ep": 1, "url": "https://anichin.stream/?id=v712kfq" },
-      { "ep": 2, "url": "https://anichin.stream/?id=v71c2em" }
+      { "episode": 1, "url": "https://anichin.stream/?id=v712kfq" },
+      { "episode": 2, "url": "https://anichin.stream/?id=v71c2em" }
     ]
   },
   {
@@ -13,7 +13,7 @@
     "title": "One Piece",
     "cover": "https://images.tokopedia.net/img/KRMmCm/2023/9/18/9f609a7c-bcb1-488e-938c-6df8576dea06.jpg",
     "episodes": [
-      { "ep": 1, "url": "https://anichin.stream/?id=v712kfq" }
+      { "episode": 1, "url": "https://anichin.stream/?id=v712kfq" }
     ]
   }
 ]

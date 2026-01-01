@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AniDong</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<title>Battle Through the Heavens</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
+<body>
 
-<body class="bg-neutral-900 text-white min-h-screen">
-
-  <h1 class="text-center text-2xl font-bold mt-6">AniDong</h1>
-
-  <!-- HERO -->
-  <div class="max-w-3xl mx-auto mt-6 p-5 rounded-xl bg-gradient-to-r from-red-500 to-purple-600">
-    <h2 class="text-xl font-bold">Nonton Donghua & Anime Sub Indo</h2>
-    <p class="text-sm mt-1">Streaming cepat & gratis</p>
+<!-- PLAYER -->
+<div class="player-section">
+  <div class="player-wrapper">
+    <iframe id="videoPlayer" allowfullscreen></iframe>
   </div>
 
- <div class="max-w-md mx-auto px-4 mb-6">
-  <input
-    id="search"
-    type="text"
-    placeholder="Cari disini..."
-    class="w-full p-3 rounded bg-neutral-800 text-white outline-none"
-  >
+  <!-- SERVER -->
+  <div class="server-bar">
+    <select id="serverSelect"></select>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-bar">
+    <button id="prevEp">‹</button>
+    <button id="listBtn">☰</button>
+    <button id="nextEp">›</button>
+  </div>
 </div>
 
-  <!-- LIST -->
-  <div id="anime-list"
-  class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 p-4">
+<!-- INFO ANIME -->
+<div class="anime-info">
+  <img src="cover.jpg">
+  <div>
+    <h2>Battle Through the Heavens</h2>
+    <p><span class="ongoing">Ongoing</span> · Episode <span id="currentEp"></span></p>
+  </div>
 </div>
 
-  <script src="./assets/js/main.js"></script>
+<!-- LIST EPISODE -->
+<div class="episode-container" id="episodeList"></div>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "naruto",
+    "title": "Naruto",
+    "cover": "https://i.imgur.com/4ZQZ4ZQ.jpg",
+    "episodes": [
+      { "ep": 1, "url": "https://example.com/embed1" },
+      { "ep": 2, "url": "https://example.com/embed2" }
+    ]
+  },
+  {
+    "id": "one-piece",
+    "title": "One Piece",
+    "cover": "https://i.imgur.com/6ZQZ6ZQ.jpg",
+    "episodes": [
+      { "ep": 1, "url": "https://example.com/op1" }
+    ]
+  }
+]

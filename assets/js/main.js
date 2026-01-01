@@ -1,8 +1,10 @@
-fetch('data/anime.json')
+fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
-    let html = '';
-    data.forEach(a => {
+    data.forEach(item => {
+      console.log(item);
+    });
+  });
       html += `
 <a href="anime.html?id=${a.id}" class="group">
   <div class="bg-zinc-900 rounded-lg overflow-hidden shadow hover:shadow-xl transition">

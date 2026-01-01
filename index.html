@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AniDong</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniDong</title>
+
+  <!-- Tailwind CDN (AMAN UNTUK DEMO) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-zinc-900 text-white">
-<header class="p-4 text-center text-2xl font-bold">AniDong</header>
-  <section class="max-w-7xl mx-auto px-4 mt-6">
-  <div class="bg-gradient-to-r from-red-600 to-purple-600 rounded-xl p-6 flex items-center justify-between">
-    <div>
-      <h1 class="text-2xl font-bold">Nonton Donghua & Anime Sub Indo</h1>
-      <p class="text-sm opacity-90 mt-1">
-        Streaming cepat & gratis
-      </p>
-    </div>
+
+<body class="bg-neutral-900 text-white min-h-screen">
+
+  <h1 class="text-center text-2xl font-bold mt-6">AniDong</h1>
+
+  <!-- HERO -->
+  <div class="max-w-md mx-auto mt-6 p-5 rounded-xl bg-gradient-to-r from-red-500 to-purple-600">
+    <h2 class="text-xl font-bold">Nonton Donghua & Anime Sub Indo</h2>
+    <p class="text-sm mt-1">Streaming cepat & gratis</p>
   </div>
-</section>
-<section class="max-w-7xl mx-auto px-4">
-<div id="anime-list" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-6"></div>
-</section>
-<script src="assets/js/main.js"></script>
+
+  <!-- LIST ANIME (INI YANG PENTING) -->
+  <div
+    id="list"
+    class="max-w-md mx-auto grid grid-cols-2 gap-4 mt-6 px-4"
+  ></div>
+
+  <!-- JS HARUS DI BAWAH -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

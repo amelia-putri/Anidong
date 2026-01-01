@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const list = document.getElementById("list");
 
-  fetch("data/anime.json")
+  fetch("./data/anime.json")
     .then(res => res.json())
     .then(data => {
       let html = "";

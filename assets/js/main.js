@@ -2,9 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const list = document.getElementById("list");
 
   fetch("./data/anime.json")
-    .then(res => res.json())
-    .then(data => {
-      let html = "";
+  .then(res => res.json())
+  .then(data => {
+    // render anime
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById("anime-list").innerHTML =
+      "<p class='text-red-500'>Gagal load data</p>";
+  });
+
 
       data.forEach(item => {
         html += `

@@ -1,9 +1,11 @@
 const container = document.getElementById("list");
 let html = "";
 
-fetch("./data/anime.json")
+fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
+    console.log("DATA MASUK:", data); // 🔍 DEBUG
+
     data.forEach(item => {
       html += `
         <a href="anime.html?id=${item.id}" class="group">
@@ -27,4 +29,4 @@ fetch("./data/anime.json")
 
     container.innerHTML = html;
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error("FETCH ERROR:", err));

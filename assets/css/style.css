@@ -5,30 +5,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.header {
-  padding: 15px;
-  background: #111;
-}
-
-.header h1 {
-  margin: 5px 0;
-  font-size: 20px;
-}
-
-.back {
-  color: #9f7aea;
-  text-decoration: none;
-}
-
-.container {
-  padding: 15px;
-}
-
 .player-wrapper {
   position: relative;
   padding-top: 56.25%;
   background: #000;
-  margin-bottom: 15px;
 }
 
 .player-wrapper iframe {
@@ -39,35 +19,69 @@ body {
   border: none;
 }
 
-.episode-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.episode-nav a {
-  padding: 8px 14px;
-  background: #222;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.episode-nav .disabled {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.episode-list a {
-  display: block;
+.server-bar {
   padding: 10px;
-  margin-bottom: 6px;
+  background: #111;
+}
+
+.server-bar select {
+  width: 100%;
+  padding: 8px;
   background: #1a1a1a;
   color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
+  border: none;
 }
 
-.episode-list a.active {
-  background: #6b46c1;
+.nav-bar {
+  display: flex;
+}
+
+.nav-bar button {
+  flex: 1;
+  padding: 12px;
+  font-size: 20px;
+  background: #1a1a1a;
+  border: none;
+  color: #fff;
+}
+
+.nav-bar button:nth-child(2) {
+  background: #e04c3c;
+}
+
+.anime-info {
+  display: flex;
+  padding: 15px;
+  background: #111;
+}
+
+.anime-info img {
+  width: 60px;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+.ongoing {
+  color: #facc15;
+}
+
+.episode-container {
+  padding: 10px;
+}
+
+.episode-card {
+  display: flex;
+  background: #1a1a1a;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.episode-card img {
+  width: 120px;
+  border-radius: 6px 0 0 6px;
+}
+
+.episode-card div {
+  padding: 10px;
 }

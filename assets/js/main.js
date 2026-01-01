@@ -6,7 +6,7 @@ fetch("./data/anime.json")
   .then(data => {
     data.forEach(item => {
       html += `
-        <a href="data/anime.html?id=${item.id}" class="group">
+        <a href="anime.html?id=${item.id}" class="group">
           <div class="bg-zinc-900 rounded-lg overflow-hidden shadow hover:shadow-xl transition">
             <div class="relative">
               <img src="${item.cover}"
@@ -25,7 +25,6 @@ fetch("./data/anime.json")
       `;
     });
 
-    // ⬅️ WAJIB DI LUAR forEach
     container.innerHTML = html;
   })
   .catch(err => console.error(err));

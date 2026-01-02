@@ -2,63 +2,61 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Detail Anime</title>
+  <title>Detail Anime | AniDong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS UTAMA -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
       background: #0b0b0b;
       color: #fff;
     }
 
+    /* HEADER */
+    header {
+      padding: 15px 25px;
+      background: #000;
+      border-bottom: 1px solid #222;
+    }
+
+    header a {
+      color: orange;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* CONTAINER */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 16px;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .status {
-      display: inline-block;
-      background: #ff7a00;
-      color: #000;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-bottom: 16px;
+      margin-top: 10px;
     }
 
     /* PLAYER */
-    .player-wrapper {
+    .player {
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
-    .player-wrapper iframe {
+    .player iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* EPISODE */
-    .episode-title {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
+    /* EPISODE LIST */
     .episode-list {
       display: flex;
       gap: 10px;
@@ -66,77 +64,48 @@
       padding-bottom: 10px;
     }
 
-    .episode-list::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .episode-list::-webkit-scrollbar-thumb {
-      background: #333;
-      border-radius: 10px;
-    }
-
-    .episode-item {
-      min-width: 70px;
-      text-align: center;
-      padding: 10px 0;
-      background: #1a1a1a;
+    .episode-list button {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
       border-radius: 8px;
       cursor: pointer;
-      user-select: none;
-      font-size: 14px;
+      white-space: nowrap;
     }
 
-    .episode-item.active {
-      background: #ff7a00;
+    .episode-list button.active {
+      background: orange;
       color: #000;
       font-weight: bold;
     }
 
-    .episode-info {
-      margin-top: 12px;
-      background: #1a1a1a;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #ccc;
+    .episode-list button:hover {
+      background: #333;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<!-- HEADER / LOGO -->
+<header>
+  <a href="index.html">AniDong</a>
+</header>
 
-    <!-- JUDUL -->
-    <h1 id="animeTitle">Battle Through the Heavens</h1>
-    <div class="status"></div>
-<div class='event'>
-<div class='event2'>
-<a class="center" href="https://t.ly/rimbatv" target="_blank"  rel="nofollow noopener noreferrer"><img alt="" class="lazy" height="70" img="" src="https://ik.imagekit.io/cbasby2gs/design%20gift%20%20(1).gif?updatedAt=1751731221041" style="margint-top:5px;" title="" width="100%"></a>
-</div> 
-</div>  
+<div class="container">
+  <h1 id="animeTitle">Loading...</h1>
 
-    <!-- PLAYER -->
-    <div class="player-wrapper">
-      <iframe
-        id="videoPlayer"
-        src=""
-        allowfullscreen
-        allow="autoplay; fullscreen">
-      </iframe>
-    </div>
-
-    <!-- EPISODE LIST -->
-    <div class="episode-title">Daftar Episode</div>
-    <div id="episodeList" class="episode-list"></div>
-
-    <div class="episode-info">
-      
-    </div>
-
+  <!-- PLAYER -->
+  <div class="player">
+    <iframe id="videoPlayer" allowfullscreen></iframe>
   </div>
 
-  <!-- JS -->
-  <script src="js/detail.js"></script>
+  <!-- EPISODE -->
+  <h3>Daftar Episode</h3>
+  <div class="episode-list" id="episodeList"></div>
+</div>
+
+<script src="js/detail.js"></script>
 </body>
 </html>

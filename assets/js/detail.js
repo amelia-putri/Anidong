@@ -1,51 +1,39 @@
-// assets/js/detail.js
-
 const params = new URLSearchParams(window.location.search);
 const animeId = params.get("id");
 
-if (!animeId) {
-  document.body.innerHTML = "<p class='text-red-500 p-4'>Anime tidak ditemukan</p>";
-  throw new Error("ID anime kosong");
-}
+const detailAnime = document.getElementById("detailAnime");
+const episodeList = document.getElementById("episodeList");
 
 fetch("data/anime.json")
-  .then(res => {
-    if (!res.ok) throw new Error("Gagal load anime.json");
-    return res.json();
-  })
+  .then(res => res.json())
   .then(data => {
     const anime = data.find(a => a.id === animeId);
 
     if (!anime) {
-      document.body.innerHTML =
-        "<p class='text-red-500 p-4'>Anime tidak ditemukan</p>";
+      detailAnime.innerHTML = "<p>Anime tidak ditemukan</p>";
       return;
     }
 
-    // Set judul & cover
-    document.getElementById("animeTitle").innerText = anime.title;
-    document.getElementById("animeCover").src = anime.cover;
+    // DETAIL ANIME
+    detailAnime.innerHTML = `
+      <img src="${anime.cover}" class="w-full rounded mb-3">
+      <h1 class="text-xl font-bold">${anime.title}</h1>
+      <p class="text-gray-400 text-sm">${anime.status}</p>
+      <p class="mt-2">${anime.sinopsis}</p>
+    `;
 
-    const episodeList = document.getElementById("episodeList");
-    episodeList.innerHTML = "";
+    // EPISODE (TERBARU DI ATAS)
+    const episodes = anime.episodes.slice().reverse();
 
-    // 👉 episode terbaru di atas
-    const episodes = [...anime.episodes].sort(
-      (a, b) => b.episode - a.episode
-    );
-
-    episodes.forEach(ep => {
-      const a = document.createElement("a");
-      a.href = `watch.html?title=${encodeURIComponent(anime.title)}&ep=${ep.episode}&url=${encodeURIComponent(ep.url)}`;
-      a.className =
-        "block bg-neutral-800 hover:bg-neutral-700 rounded p-3 mb-2 transition";
-
-      a.innerText = `Episode ${ep.episode}`;
-      episodeList.appendChild(a);
-    });
+    episodeList.innerHTML = episodes.map(ep => `
+      <a href="${ep.video}"
+         target="_blank"
+         class="block bg-zinc-800 p-3 rounded hover:bg-zinc-700">
+        Episode ${ep.ep}
+      </a>
+    `).join("");
   })
   .catch(err => {
     console.error(err);
-    document.getElementById("episodeList").innerHTML =
-      "<p class='text-red-500'>Gagal load data</p>";
+    detailAnime.innerHTML = "<p>Gagal load data</p>";
   });

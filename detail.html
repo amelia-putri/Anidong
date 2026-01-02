@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Detail Anime</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black text-white">
+<body>
 
-  <div class="max-w-md mx-auto p-4">
-    <a href="index.html" class="text-blue-400">← Kembali</a>
+<div class="container detail-layout">
 
-    <div id="detailAnime" class="mt-4"></div>
+  <!-- KONTEN KIRI -->
+  <div class="content">
+    <img id="cover" style="width:100%;max-width:400px;border-radius:8px;">
+    <h2 id="title"></h2>
+    <p id="desc"></p>
 
-    <h2 class="mt-6 text-lg font-bold">Daftar Episode</h2>
-    <div id="episodeList" class="mt-2 space-y-2"></div>
+    <h3>Daftar Episode</h3>
+    <div id="episodeList"></div>
   </div>
 
-  <script src="assets/js/detail.js"></script>
+  <!-- SIDEBAR KANAN -->
+  <div class="sidebar">
+    <h3>Ongoing Series</h3>
+    <div id="sidebarList"></div>
+  </div>
+
+</div>
+
+<script src="js/detail.js"></script>
 </body>
 </html>

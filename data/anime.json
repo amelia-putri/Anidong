@@ -50,5 +50,39 @@
         "video": "https://anichin.stream/?id=v712kfq"
       }
     ]
+  },
+  {
+    "id": "shrouding-the-heavens",
+    "title": "Shrouding the Heavens",
+    "cover": "https://anichin.cafe/wp-content/uploads/2023/05/Shrouding.webp",
+    "status": "Ongoing",
+    "sinopsis": "Petualangan Xiao Yan menjadi kultivator terkuat.",
+    "episodes": [
+      {
+        "ep": 1,
+        "video": "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        "ep": 2,
+        "video": "https://anichin.stream/?id=v712kfq"
+      }
+    ]
+  },
+  {
+    "id": "throne-of-seal",
+    "title": "Throne of Seal",
+    "cover": "https://anichin.cafe/wp-content/uploads/2022/04/throne-of-seal-sub-indo.webp",
+    "status": "Ongoing",
+    "sinopsis": "Petualangan Xiao Yan menjadi kultivator terkuat.",
+    "episodes": [
+      {
+        "ep": 1,
+        "video": "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        "ep": 2,
+        "video": "https://anichin.stream/?id=v712kfq"
+      }
+    ]
   }
 ]

@@ -1,33 +1,29 @@
-const id = new URLSearchParams(location.search).get("id");
-
-fetch("data/anime.json")
+fetch("./data/anime.json")
   .then(res => res.json())
   .then(data => {
-
     const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+    const id = params.get("id");
 
-const episodeList = document.getElementById("episode-list");
+    const anime = data.find(a => a.id === id);
+    const episodeList = document.getElementById("episodeList");
 
-const data = {
-  btth: {
-    title: "Battle Through The Heavens",
-    episodes: 12
-  }
-};
+    if (!anime || !episodeList) {
+      episodeList.innerHTML = "<p>Episode tidak ditemukan</p>";
+      return;
+    }
 
-if (!data[id]) {
-  episodeList.innerHTML = "<p>Anime tidak ditemukan</p>";
-} else {
-  let html = "";
-  for (let i = 1; i <= data[id].episodes; i++) {
-    html += `<a class="episode">Episode ${i}</a>`;
-  }
-  episodeList.innerHTML = html;
-}
-    
-if (!anime) {
-  episodeList.innerHTML = "<p>Data tidak ditemukan</p>";
-  return;
-}
+    // Episode terbaru di depan
+    const episodes = [...anime.episodes].reverse();
 
+    episodeList.innerHTML = episodes.map(ep => `
+      <a href="watch.html?id=${anime.id}&ep=${ep.episode}"
+         class="episode-item">
+        EP ${ep.episode}
+      </a>
+    `).join("");
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById("episodeList").innerHTML =
+      "<p>Gagal memuat episode</p>";
+  });

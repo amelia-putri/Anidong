@@ -1,30 +1,24 @@
-const p = new URLSearchParams(location.search);
-const id = p.get("id");
-const ep = parseInt(p.get("ep"));
+const params = new URLSearchParams(window.location.search);
+const animeId = params.get("id");
+const currentEp = parseInt(params.get("ep"));
 
 fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
+    const anime = data.find(a => a.id === animeId);
+    if (!anime) return;
 
-    const anime = data.find(a => a.id === id);
-    const current = anime.episodes.find(e => e.ep === ep);
+    const episode = anime.episodes.find(e => e.ep === currentEp);
+    if (!episode) return;
 
-    epTitle.innerText = `${anime.title} Episode ${ep}`;
-    video.innerHTML = current.video;
+    document.getElementById("player").src = episode.video;
 
-    anime.episodes.forEach(e=>{
-      listEp.innerHTML += `
-        <div class="episode"
-          onclick="location.href='watch.html?id=${id}&ep=${e.ep}'">
-          Episode ${e.ep}
-        </div>
-      `;
-    });
-
-    const next = anime.episodes.find(e=>e.ep===ep+1);
-    if(next){
-      nextEp.href = `watch.html?id=${id}&ep=${ep+1}`;
+    const next = anime.episodes.find(e => e.ep === currentEp + 1);
+    if (next) {
+      document.getElementById("nextBtn").onclick = () => {
+        location.href = `watch.html?id=${animeId}&ep=${next.ep}`;
+      };
     } else {
-      nextEp.style.display="none";
+      document.getElementById("nextBtn").style.display = "none";
     }
   });

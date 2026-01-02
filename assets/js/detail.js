@@ -4,7 +4,16 @@ fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
 
-    const anime = data.find(x => x.id === id);
+    const animeData = {
+  btth: {
+    title: "Battle Through The Heavens",
+    episodes: [
+      { ep: 1, url: "https://anichin.stream/?id=v71c2em" },
+      { ep: 2, url: "https://anichin.stream/?id=v71c2em" }
+    ]
+  }
+};
+
 
     cover.src = anime.cover;
     title.innerText = anime.title;

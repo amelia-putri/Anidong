@@ -18,4 +18,42 @@
   }
 ]
 
+[
+  {
+    "id": "word-of-Coming-Season-2",
+    "title": "Word of Coming Season 2",
+    "cover": "https://i.redd.it/jian-lai-sword-of-coming-season-2-is-scheduled-to-air-this-v0-9fb8xo6cyqee1.jpg?width=1920&format=pjpg&auto=webp&s=59078c4890349df050d324cc6a4e5d842f1ec5c9",
+    "status": "Ongoing",
+    "sinopsis": "Petualangan Xiao Yan menjadi kultivator terkuat.",
+    "episodes": [
+      {
+        "ep": 1,
+        "video": "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        "ep": 2,
+        "video": "https://anichin.stream/?id=v712kfq"
+      }
+    ]
+  }
+]
 
+[
+  {
+    "id": "tales-of-herding-gods",
+    "title": "Tales of Herding Gods",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxETbJKLLrJrJCxUZumRGxTZ6L5KhufhXiQA&s",
+    "status": "Ongoing",
+    "sinopsis": "Petualangan Xiao Yan menjadi kultivator terkuat.",
+    "episodes": [
+      {
+        "ep": 1,
+        "video": "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        "ep": 2,
+        "video": "https://anichin.stream/?id=v712kfq"
+      }
+    ]
+  }
+]

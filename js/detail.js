@@ -137,7 +137,7 @@ const animeData = {
       {
         ep: "EP 10",
         video: "https://anichin.stream/?id=v712kfq"
-      },
+      }
        ]
   },
 

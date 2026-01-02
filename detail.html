@@ -5,46 +5,17 @@
   <title>Detail Anime</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white p-4">
+<body class="bg-black text-white">
 
-<a href="index.html" class="text-purple-400">← Kembali</a>
+  <div class="max-w-md mx-auto p-4">
+    <a href="index.html" class="text-blue-400">← Kembali</a>
 
-<div id="detail" class="max-w-3xl mx-auto mt-4"></div>
+    <div id="detailAnime" class="mt-4"></div>
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+    <h2 class="mt-6 text-lg font-bold">Daftar Episode</h2>
+    <div id="episodeList" class="mt-2 space-y-2"></div>
+  </div>
 
-fetch("../../data/anime.json")
-  .then(res => res.json())
-  .then(data => {
-    const anime = data.find(a => a.id === id);
-    if (!anime) return;
-
-    const episodes = [...anime.episodes].sort((a,b)=>b.episode-a.episode);
-
-    document.getElementById("detail").innerHTML = `
-      <img src="${anime.cover}" class="rounded mb-4">
-      <h1 class="text-2xl font-bold mb-2">${anime.title}</h1>
-
-      <div class="space-y-2">
-        episodeList.innerHTML += `
-<a href="episode.html?id=${anime.id}&ep=${ep.episode}"
- class="block bg-neutral-800 p-3 rounded hover:bg-neutral-700">
- Episode ${ep.episode}
-</a>
-`;
-  });
-</script>
-  
-  <h1 id="animeTitle" class="text-xl font-bold mb-3"></h1>
-
-<img id="animeCover" class="rounded mb-4" />
-
-<div id="episodeList"></div>
-
-<script src="assets/js/detail.js"></script>
-
-
+  <script src="assets/js/detail.js"></script>
 </body>
 </html>

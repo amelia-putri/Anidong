@@ -34,10 +34,11 @@ a {
   color: #ff5e00;
 }
 
-.search {
-  width: 280px;
+.search-box input {
+  width: 250px;
   max-width: 100%;
 }
+
 
 /* ===== BANNER ===== */
 .banner {

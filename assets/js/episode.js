@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const ep = parseInt(params.get("ep"));
 
-fetch("../../data/anime.json")
+fetch("data/anime.json")
 .then(res => res.json())
 .then(data => {
   const anime = data.find(a => a.id === id);

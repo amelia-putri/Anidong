@@ -28,14 +28,12 @@ fetch("./data/anime.json")
       <h1 class="text-2xl font-bold mb-2">${anime.title}</h1>
 
       <div class="space-y-2">
-        ${episodes.map(ep => `
-          <a href="watch.html?title=${encodeURIComponent(anime.title)}&ep=${ep.episode}&url=${encodeURIComponent(ep.url)}"
-             class="block bg-neutral-800 p-3 rounded hover:bg-neutral-700">
-            Episode ${ep.episode}
-          </a>
-        `).join("")}
-      </div>
-    `;
+        episodeList.innerHTML += `
+<a href="episode.html?id=${anime.id}&ep=${ep.episode}"
+ class="block bg-neutral-800 p-3 rounded hover:bg-neutral-700">
+ Episode ${ep.episode}
+</a>
+`;
   });
 </script>
 

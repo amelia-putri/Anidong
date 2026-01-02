@@ -1,39 +1,30 @@
-const params = new URLSearchParams(window.location.search);
-const animeId = params.get("id");
-
-const detailAnime = document.getElementById("detailAnime");
-const episodeList = document.getElementById("episodeList");
+const id = new URLSearchParams(location.search).get("id");
 
 fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
-    const anime = data.find(a => a.id === animeId);
+    const anime = data.find(a => a.id === id);
 
-    if (!anime) {
-      detailAnime.innerHTML = "<p>Anime tidak ditemukan</p>";
-      return;
-    }
+    document.getElementById("cover").src = anime.cover;
+    document.getElementById("title").innerText = anime.title;
+    document.getElementById("desc").innerText = anime.desc;
 
-    // DETAIL ANIME
-    detailAnime.innerHTML = `
-      <img src="${anime.cover}" class="w-full rounded mb-3">
-      <h1 class="text-xl font-bold">${anime.title}</h1>
-      <p class="text-gray-400 text-sm">${anime.status}</p>
-      <p class="mt-2">${anime.sinopsis}</p>
-    `;
+    const epList = document.getElementById("episodeList");
 
-    // EPISODE (TERBARU DI ATAS)
-    const episodes = anime.episodes.slice().reverse();
+    anime.episodes
+      .sort((a, b) => b.ep - a.ep) // EP BARU KE ATAS
+      .forEach(ep => {
+        epList.innerHTML += `
+          <div class="episode"
+            onclick="location.href='watch.html?id=${anime.id}&ep=${ep.ep}'">
+            Episode ${ep.ep}
+          </div>
+        `;
+      });
 
-    episodeList.innerHTML = episodes.map(ep => `
-      <a href="${ep.video}"
-         target="_blank"
-         class="block bg-zinc-800 p-3 rounded hover:bg-zinc-700">
-        Episode ${ep.ep}
-      </a>
-    `).join("");
-  })
-  .catch(err => {
-    console.error(err);
-    detailAnime.innerHTML = "<p>Gagal load data</p>";
+    // SIDEBAR
+    const sidebar = document.getElementById("sidebarList");
+    data.slice(0, 6).forEach(a => {
+      sidebar.innerHTML += `<p>${a.title}</p>`;
+    });
   });

@@ -6,48 +6,30 @@ const search = document.getElementById("search");
 fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
-    const list = document.getElementById("animeList");
 
-    data.forEach(anime => {
+    // BANNER (AMBIL 1 DATA)
+    const b = data[0];
+    document.getElementById("banner").innerHTML = `
+      <img src="${b.cover}">
+      <div class="banner-info">
+        <h2>${b.title}</h2>
+        <p>${b.desc}</p>
+        <a class="btn" href="detail.html?id=${b.id}">Watch Now</a>
+      </div>
+    `;
+
+    // POPULAR
+    const list = document.getElementById("animeList");
+    data.forEach(a => {
       list.innerHTML += `
-        <div class="card" onclick="location.href='detail.html?id=${anime.id}'">
-          <img src="${anime.cover}">
-          <div class="card-title">${anime.title}</div>
+        <div class="card" onclick="location.href='detail.html?id=${a.id}'">
+          <img src="${a.cover}">
+          <div class="card-title">${a.title}</div>
         </div>
       `;
     });
   });
 
-  .catch(err => {
-    console.error(err);
-    document.getElementById("animeList").innerHTML =
-      "<p class='text-red-500'>Gagal load data</p>";
-  });
-
-
-function renderAnime(data) {
-  list.innerHTML = "";
-
-  if (data.length === 0) {
-    list.innerHTML = "<p class='text-gray-400'>Anime tidak ditemukan</p>";
-    return;
-  }
-
-  data.forEach(anime => {
-    const lastEp = anime.episodes[0];
-
-    list.innerHTML += `
-      <a href="detail.html?id=${anime.id}"
-        class="block bg-neutral-800 rounded overflow-hidden hover:scale-105 transition">
-        <img src="${anime.cover}" class="w-full h-40 object-cover">
-        <div class="p-3">
-          <h3 class="font-bold">${anime.title}</h3>
-          <p class="text-sm text-gray-400">Episode ${lastEp.episode}</p>
-        </div>
-      </a>
-    `;
-  });
-}
 
 // SEARCH LOGIC
 search.addEventListener("input", e => {

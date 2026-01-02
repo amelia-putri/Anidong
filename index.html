@@ -1,36 +1,19 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AniDong</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-neutral-900 text-white min-h-screen">
+<div class="container">
+  <h2>Nonton Donghua Sub Indo</h2>
 
-  <h1 class="text-center text-2xl font-bold mt-6">AniDong</h1>
+  <input id="search" placeholder="Cari anime..." />
 
-  <!-- HERO -->
-  <div class="max-w-3xl mx-auto mt-6 p-5 rounded-xl bg-gradient-to-r from-red-500 to-purple-600">
-    <h2 class="text-xl font-bold">Nonton Donghua Sub Indo</h2>
-    <p class="text-sm mt-1">Streaming cepat & gratis</p>
-  </div>
-
- <div class="max-w-md mx-auto px-4 mb-6">
-  <input
-    id="search"
-    type="text"
-    placeholder="Cari disini..."
-    class="w-full p-3 rounded bg-neutral-800 text-white outline-none"
-  >
+  <div class="grid" id="animeList"></div>
 </div>
 
-  <!-- LIST -->
-  <div id="animeList" class="grid grid-cols-2 gap-3 mt-4"></div>
-
-
-  <script src="./assets/js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

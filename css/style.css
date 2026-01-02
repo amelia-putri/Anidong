@@ -193,4 +193,51 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* Episode List */
+.episode-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+/* Episode Item */
+.episode-item {
+  background: #1f1f1f;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.episode-item:hover {
+  background: #ff7a00;
+}
+
+/* 📱 MOBILE MODE */
+@media (max-width: 768px) {
+  .episode-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+
+  .episode-item {
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+
+  /* Scrollbar halus */
+  .episode-list::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .episode-list::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+  }
+}
 

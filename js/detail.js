@@ -1,24 +1,41 @@
-const params = new URLSearchParams(window.location.search);
-const animeId = params.get("id");
+const anime = {
+  title: "Pertempuran Menembus Langit",
+  episodes: [
+    {
+      ep: 1,
+      title: "Episode 1",
+      video: "https://anichin.stream/?id=v712kfq"
+    },
+    {
+      ep: 2,
+      title: "Episode 2",
+      video: "https://anichin.stream/?id=v712kfq"
+    }
+  ]
+};
 
-fetch("data/anime.json")
-  .then(res => res.json())
-  .then(data => {
-    const anime = data.find(a => a.id === animeId);
-    if (!anime) return;
+const episodeList = document.getElementById("episodeList");
+const videoPlayer = document.getElementById("videoPlayer");
 
-    document.getElementById("title").textContent = anime.title;
-    document.getElementById("status").textContent = anime.status;
+// render episode list
+anime.episodes.forEach((e, i) => {
+  const btn = document.createElement("div");
+  btn.className = "episode-item";
+  btn.textContent = `EP ${e.ep}`;
+  btn.onclick = () => playEpisode(i);
+  episodeList.appendChild(btn);
+});
 
-    const episodeList = document.getElementById("episodeList");
+// play episode function
+function playEpisode(index) {
+  videoPlayer.src = anime.episodes[index].video;
 
-    episodeList.innerHTML = [...anime.episodes]
-      .sort((a, b) => b.ep - a.ep)
-      .map(ep => `
-        <a href="watch.html?id=${anime.id}&ep=${ep.ep}"
-           class="ep-item">
-          EP ${ep.ep}
-        </a>
-      `)
-      .join("");
-  });
+  document.querySelectorAll(".episode-item").forEach(el =>
+    el.classList.remove("active")
+  );
+
+  episodeList.children[index].classList.add("active");
+}
+
+// auto play episode 1
+playEpisode(0);

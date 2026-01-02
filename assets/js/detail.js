@@ -4,31 +4,25 @@ fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
 
-    const animeData = {
+    const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const episodeList = document.getElementById("episode-list");
+
+const data = {
   btth: {
     title: "Battle Through The Heavens",
-    episodes: [
-      { ep: 1, url: "https://anichin.stream/?id=v71c2em" },
-      { ep: 2, url: "https://anichin.stream/?id=v71c2em" }
-    ]
+    episodes: 12
   }
 };
-    cover.src = anime.cover;
-    title.innerText = anime.title;
-    desc.innerText = anime.desc;
 
-    anime.episodes
-      .sort((a,b)=>b.ep-a.ep)
-      .forEach(e => {
-        episodeList.innerHTML += `
-          <div class="episode"
-            onclick="location.href='watch.html?id=${id}&ep=${e.ep}'">
-            Episode ${e.ep}
-          </div>
-        `;
-      });
+if (!data[id]) {
+  episodeList.innerHTML = "<p>Anime tidak ditemukan</p>";
+} else {
+  let html = "";
+  for (let i = 1; i <= data[id].episodes; i++) {
+    html += `<a class="episode">Episode ${i}</a>`;
+  }
+  episodeList.innerHTML = html;
+}
 
-    data.slice(0,6).forEach(a=>{
-      sideList.innerHTML += `<p>${a.title}</p>`;
-    });
-  });

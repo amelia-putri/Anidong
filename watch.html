@@ -1,48 +1,26 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Watch</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black text-white p-4">
+<body>
 
-<a href="javascript:history.back()" class="text-purple-400">← Kembali</a>
+<div class="container layout">
 
-<h1 id="title" class="text-xl font-bold mt-2"></h1>
-<p id="episode" class="text-gray-400 mb-2"></p>
+  <div>
+    <div class="video" id="video"></div>
+    <h3 id="epTitle"></h3>
+    <a class="btn" id="nextEp">Next Episode</a>
+  </div>
 
-<iframe id="player" class="w-full aspect-video rounded" allowfullscreen></iframe>
+  <div class="sidebar">
+    <h3>Episode List</h3>
+    <div id="listEp"></div>
+  </div>
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const title = params.get("title");
-const currentEp = parseInt(params.get("ep"));
-const url = params.get("url");
+</div>
 
-document.getElementById("title").innerText = title;
-document.getElementById("episode").innerText = "Episode " + currentEp;
-document.getElementById("player").src = url;
-
-// AUTO NEXT (logic siap)
-fetch("./data/anime.json")
-  .then(res => res.json())
-  .then(data => {
-    const anime = data.find(a => a.title === title);
-    if (!anime) return;
-
-    const eps = [...anime.episodes].sort((a,b)=>a.episode-b.episode);
-    const i = eps.findIndex(e => e.episode === currentEp);
-    const next = eps[i + 1];
-
-    if (next) {
-      setTimeout(() => {
-        location.href =
-          `watch.html?title=${encodeURIComponent(title)}&ep=${next.episode}&url=${encodeURIComponent(next.url)}`;
-      }, 1000 * 60 * 20); // fallback 20 menit
-    }
-  });
-</script>
-
+<script src="js/watch.js"></script>
 </body>
 </html>

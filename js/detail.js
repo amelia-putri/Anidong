@@ -95,7 +95,7 @@ const animeData = {
     ]
   },
 
-  togh: {
+  toh: {
     title: "Tales of Herding Gods",
     episodes: [
       {
@@ -136,6 +136,46 @@ const animeData = {
       },
       {
         ep: "EP 10",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 11",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 2",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 13",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 14",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 15",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 16",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 17",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 18",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 19",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 20",
         video: "https://anichin.stream/?id=v712kfq"
       }
        ]

@@ -25,3 +25,9 @@ if (!data[id]) {
   }
   episodeList.innerHTML = html;
 }
+    
+if (!anime) {
+  episodeList.innerHTML = "<p>Data tidak ditemukan</p>";
+  return;
+}
+

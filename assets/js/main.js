@@ -8,22 +8,16 @@ fetch("data/anime.json")
   .then(data => {
     const list = document.getElementById("animeList");
 
-    if (!list) {
-      console.error("animeList tidak ditemukan");
-      return;
-    }
-
-    list.innerHTML = "";
-
     data.forEach(anime => {
       list.innerHTML += `
-        <a href="detail.html?id=${anime.id}" class="block bg-neutral-800 rounded p-2">
-          <img src="${anime.cover}" class="rounded mb-2">
-          <h3 class="text-sm font-bold">${anime.title}</h3>
-        </a>
+        <div class="card" onclick="location.href='detail.html?id=${anime.id}'">
+          <img src="${anime.cover}">
+          <div class="card-title">${anime.title}</div>
+        </div>
       `;
     });
-  })
+  });
+
   .catch(err => {
     console.error(err);
     document.getElementById("animeList").innerHTML =

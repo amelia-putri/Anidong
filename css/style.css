@@ -47,3 +47,26 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
+.detail-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+.sidebar {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.episode {
+  background: #222;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.episode:hover {
+  background: #333;
+}

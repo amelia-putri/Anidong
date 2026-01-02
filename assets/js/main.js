@@ -18,11 +18,11 @@ fetch("data/anime.json")
       `;
     });
   })
-  .catch(() => {
+  .catch(err => {
+    console.error(err);
     document.getElementById("animeList").innerHTML =
       "<p class='text-red-500'>Gagal load data</p>";
   });
-
 
 function renderAnime(data) {
   list.innerHTML = "";

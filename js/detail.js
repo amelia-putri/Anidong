@@ -9,7 +9,7 @@ const animeData = {
       {
         ep: "EP 2",
         video: "https://anichin.stream/?id=v712kfq"
-      }
+      },
       {
         ep: "EP 3",
         video: "https://anichin.stream/?id=v712kfq"
@@ -57,7 +57,7 @@ const animeData = {
         video: "https://anichin.stream/?id=v712kfq"
       },
       {
-        ep: "EP 3",
+        ep: "EP 2",
         video: "https://anichin.stream/?id=v712kfq"
       },
       {
@@ -103,7 +103,7 @@ const animeData = {
         video: "https://anichin.stream/?id=v712kfq"
       },
       {
-        ep: "EP 3",
+        ep: "EP 2",
         video: "https://anichin.stream/?id=v712kfq"
       },
       {

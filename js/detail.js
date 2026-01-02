@@ -4,11 +4,47 @@ const animeData = {
     episodes: [
       {
         ep: "EP 1",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        video: "https://anichin.stream/?id=v712kfq"
       },
       {
         ep: "EP 2",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        video: "https://anichin.stream/?id=v712kfq"
+      }
+      {
+        ep: "EP 3",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 3",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 4",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 5",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 6",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 7",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 8",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 9",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 10",
+        video: "https://anichin.stream/?id=v712kfq"
       }
     ]
   },
@@ -18,7 +54,43 @@ const animeData = {
     episodes: [
       {
         ep: "EP 1",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 3",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 3",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 4",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 5",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 6",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 7",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 8",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 9",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 10",
+        video: "https://anichin.stream/?id=v712kfq"
       }
     ]
   },
@@ -28,7 +100,43 @@ const animeData = {
     episodes: [
       {
         ep: "EP 1",
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 3",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 3",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 4",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 5",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 6",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 7",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 8",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 9",
+        video: "https://anichin.stream/?id=v712kfq"
+      },
+      {
+        ep: "EP 10",
+        video: "https://anichin.stream/?id=v712kfq"
       }
     ]
   }

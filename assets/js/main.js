@@ -7,13 +7,19 @@ fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
     const list = document.getElementById("animeList");
+
+    if (!list) {
+      console.error("animeList tidak ditemukan");
+      return;
+    }
+
     list.innerHTML = "";
 
     data.forEach(anime => {
       list.innerHTML += `
-        <a href="detail.html?id=${anime.id}" class="block bg-neutral-800 rounded p-3">
+        <a href="detail.html?id=${anime.id}" class="block bg-neutral-800 rounded p-2">
           <img src="${anime.cover}" class="rounded mb-2">
-          <h3 class="font-bold">${anime.title}</h3>
+          <h3 class="text-sm font-bold">${anime.title}</h3>
         </a>
       `;
     });
@@ -23,6 +29,7 @@ fetch("data/anime.json")
     document.getElementById("animeList").innerHTML =
       "<p class='text-red-500'>Gagal load data</p>";
   });
+
 
 function renderAnime(data) {
   list.innerHTML = "";

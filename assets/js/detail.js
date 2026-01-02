@@ -13,8 +13,6 @@ fetch("data/anime.json")
     ]
   }
 };
-
-
     cover.src = anime.cover;
     title.innerText = anime.title;
     desc.innerText = anime.desc;

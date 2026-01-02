@@ -6,12 +6,23 @@ const search = document.getElementById("search");
 fetch("../../data/anime.json")
   .then(res => res.json())
   .then(data => {
-    animeData = data;
-    renderAnime(animeData);
+    const list = document.getElementById("animeList");
+    list.innerHTML = "";
+
+    data.forEach(anime => {
+      list.innerHTML += `
+        <a href="detail.html?id=${anime.id}" class="block bg-neutral-800 rounded p-3">
+          <img src="${anime.cover}" class="rounded mb-2">
+          <h3 class="font-bold">${anime.title}</h3>
+        </a>
+      `;
+    });
   })
   .catch(() => {
-    list.innerHTML = "<p class='text-red-500'>Gagal load data</p>";
+    document.getElementById("animeList").innerHTML =
+      "<p class='text-red-500'>Gagal load data</p>";
   });
+
 
 function renderAnime(data) {
   list.innerHTML = "";

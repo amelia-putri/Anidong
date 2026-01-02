@@ -1,35 +1,70 @@
-const anime = {
-  title: "Pertempuran Menembus Langit",
-  episodes: [
-    {
-      ep: 1,
-      video: "https://anichin.stream/?id=v712kfq"
-    },
-    {
-      ep: 2,
-      video: "https://anichin.stream/?id=v712kfq"
-    }
-  ]
+const animeData = {
+  btth: {
+    title: "Battle Through the Heavens",
+    episodes: [
+      {
+        ep: "EP 1",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        ep: "EP 2",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      }
+    ]
+  },
+
+  woc: {
+    title: "Word of Coming Season 2",
+    episodes: [
+      {
+        ep: "EP 1",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      }
+    ]
+  },
+
+  togh: {
+    title: "Tales of Herding Gods",
+    episodes: [
+      {
+        ep: "EP 1",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      }
+    ]
+  }
 };
 
-const episodeList = document.getElementById("episodeList");
-const videoPlayer = document.getElementById("videoPlayer");
+// Ambil ID dari URL
+const params = new URLSearchParams(window.location.search);
+const animeId = params.get("id");
 
-anime.episodes.forEach((e, i) => {
-  const div = document.createElement("div");
-  div.className = "episode-item";
-  div.innerText = "EP " + e.ep;
-  div.onclick = () => playEpisode(i);
-  episodeList.appendChild(div);
-});
+const anime = animeData[animeId];
 
-function playEpisode(index) {
-  videoPlayer.src = anime.episodes[index].video;
+if (!anime) {
+  document.getElementById("animeTitle").textContent = "Anime tidak ditemukan";
+} else {
+  document.getElementById("animeTitle").textContent = anime.title;
 
-  document.querySelectorAll(".episode-item")
-    .forEach(el => el.classList.remove("active"));
+  const player = document.getElementById("videoPlayer");
+  const list = document.getElementById("episodeList");
 
-  episodeList.children[index].classList.add("active");
+  // Load episode pertama
+  player.src = anime.episodes[0].video;
+
+  anime.episodes.forEach((item, index) => {
+    const btn = document.createElement("button");
+    btn.textContent = item.ep;
+
+    if (index === 0) btn.classList.add("active");
+
+    btn.onclick = () => {
+      document.querySelectorAll(".episode-list button")
+        .forEach(b => b.classList.remove("active"));
+
+      btn.classList.add("active");
+      player.src = item.video;
+    };
+
+    list.appendChild(btn);
+  });
 }
-
-playEpisode(0);

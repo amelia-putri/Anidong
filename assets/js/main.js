@@ -3,7 +3,7 @@ let animeData = [];
 const list = document.getElementById("anime-list");
 const search = document.getElementById("search");
 
-fetch("../../data/anime.json")
+fetch("data/anime.json")
   .then(res => res.json())
   .then(data => {
     const list = document.getElementById("animeList");
